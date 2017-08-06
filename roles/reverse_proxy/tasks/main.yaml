@@ -8,6 +8,10 @@
   fail: msg="reverse_proxy_domain is undefined. Set it in host_vars/reverse-proxy@freenas.local.yaml"
   when: reverse_proxy_domain is not defined
 
+- name: create reverse-proxy config folder
+  file: path=/usr/local/etc/nginx/reverse-proxy state=directory
+        owner=root group=wheel mode=0755
+
 - name: configure public site
   include: public.yaml
 

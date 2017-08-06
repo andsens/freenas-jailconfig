@@ -1,10 +1,9 @@
 ---
 
-- name: create reverse-proxy config structure
+- name: create reverse-proxy subdirs config structure
   file: path=/usr/local/etc/nginx/{{ item }} state=directory
         owner=root group=wheel mode=0755
   with_items:
-    - reverse-proxy
     - reverse-proxy/locations
     - reverse-proxy/upstreams
 
