@@ -22,3 +22,12 @@
   # acme-client will know what's up.
   notify: request letsencrypt certificate
   tags: [config]
+
+- name: request letsencrypt certificate for the first time
+  command: >
+    /usr/local/bin/acme-client -N -n -e
+    -C /usr/local/www/public/.well-known/acme-challenge
+    {{ reverse_proxy_domain }}
+    {{ reverse_proxy_alt_domains|map(attribute='domain')|join(' ') }}
+    creates=/usr/local/etc/ssl/acme/fullchain.pem
+  notify: reload nginx
