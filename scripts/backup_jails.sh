@@ -51,5 +51,6 @@ function backup {
 (set -e; backup rtorrent usr/local/libdata/rtorrent/.rtorrent.session usr/local/www/rutorrent/share)
 (set -e; backup sabnzbd usr/local/sabnzbd/sabnzbd.ini)
 (set -e; backup sonarr usr/local/sonarr/{nzbdrone.db,nzbdrone.db-shm,nzbdrone.db-wal,config.xml})
+(set -e; backup radarr usr/local/radarr/{nzbdrone.db,nzbdrone.db-shm,nzbdrone.db-wal,config.xml})
 (set -e; backup plex "usr/local/plexdata/Plex Media Server/Preferences.xml" "usr/local/plexdata/Plex Media Server/Plug-in Support/Databases")
 (set -e; backup stats var/db/grafana/grafana.db var/db/influxdb)

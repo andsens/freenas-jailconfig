@@ -22,6 +22,9 @@ all:
         sonarr:
           ansible_ssh_host: sonarr.local
           ansible_python_interpreter: /usr/local/bin/python3
+        radarr:
+          ansible_ssh_host: radarr.local
+          ansible_python_interpreter: /usr/local/bin/python3
         dnscrypt-proxy:
           ansible_ssh_host: dnscrypt-proxy.local
           ansible_python_interpreter: /usr/local/bin/python3

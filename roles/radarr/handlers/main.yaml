@@ -1,0 +1,11 @@
+---
+
+- name: start radarr
+  service:
+    name: radarr
+    state: started
+
+- name: restart radarr
+  service:
+    name: radarr
+    state: restarted

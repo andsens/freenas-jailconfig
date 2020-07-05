@@ -1,0 +1,28 @@
+---
+
+- name: install radarr
+  pkgng:
+    name: radarr
+    state: present
+
+- name: add the radarr user to the media group
+  user:
+    name: radarr
+    groups: media
+    append: yes
+  notify: restart radarr
+
+- name: allow radarr to auto-update
+  file:
+    path: /usr/local/share/radarr
+    state: directory
+    recurse: yes
+    owner: radarr
+    group: wheel
+    mode: 'u=rwX,go=rX'
+
+- name: enable radarr
+  service:
+    name: radarr
+    enabled: yes
+  notify: start radarr
