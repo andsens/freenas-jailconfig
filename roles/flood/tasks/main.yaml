@@ -43,7 +43,7 @@
   git:
     repo: https://github.com/jfurrow/flood.git
     dest: /usr/local/www/flood
-    version: 2cd1aa63e70c15640f9007452b3b987eabd9c7b5
+    version: 61b63e9b549b4ae92796b5595f583e4cff388a13
     update: yes
     force: yes
   notify:
